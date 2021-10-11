@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@300;400;700&display=swap');
+*, body, html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  user-select: none;
+  /* -webkit-app-region: drag; */
+  height: 100vh;
+  width: 100vw;
+  background-image: url('../img/background_image.png');
+  background-attachment: fixed;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: Dosis;
+}
+
+.hide {
+  display: none;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(8, 8, 13, .8);
+  display: grid;
+  grid-template-columns: 70% 30%;
+}
+
+.container .music_list {
+  background-color: rgba(255, 255, 255, .9);
+  margin: 20px;
+  border-radius: 20px;
+  color: #070408;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: baseline;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+.container .music_list .list_head {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 40px 100px 45% 20% 15%;
+  justify-content: center;
+  padding: 5px 15px;
+  border-bottom: gray;
+  background-color: rgba(144, 146, 155, 0.8);
+  text-align: center;
+  font-weight: 900;
+}
+
+.container .music_list .list_head .row {
+  border-right: 1px solid #bdbcc1;
+}
+
+.container .music_list .list_head .album {
+  border-right: 1px solid #bdbcc1;
+}
+
+.container .music_list .list_head .title {
+  border-right: 1px solid #bdbcc1;
+}
+
+.container .music_list .list_head .artist {
+  border-right: 1px solid #bdbcc1;
+}
+
+.container .music_list .list_item {
+  width: 100%;
+  height: 50px;
+  display: grid;
+  grid-template-columns: 40px 100px 45% 20% 15%;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 15px;
+  border-bottom: 1px solid darkgray;
+  background-color: rgba(255, 255, 255, 0.1);
+  text-align: center;
+  font-weight: bold;
+  line-height: 10px;
+  cursor: pointer;
+}
+
+.container .music_list .list_item .title {
+  padding: 0 10px;
+  text-align: left;
+}
+
+.container .music_list .list_item .album img {
+  width: 40px;
+}
+
+.container .current_music {
+  /* background-color: #ccc; */
+}

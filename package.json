@@ -1,0 +1,33 @@
+{
+  "name": "desktop_musicplayer",
+  "version": "1.0.0",
+  "description": "Desktop Music Player Using ElectronJS",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "watch": "nodemon --exec electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hsadeghzadeh79/Desktop_MusicPlayer.git"
+  },
+  "keywords": [
+    "Electron",
+    "Music Player"
+  ],
+  "author": "HamedSDZ",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hsadeghzadeh79/Desktop_MusicPlayer/issues"
+  },
+  "homepage": "https://github.com/hsadeghzadeh79/Desktop_MusicPlayer#readme",
+  "dependencies": {
+    "bootstrap": "^5.1.3",
+    "glob": "^7.2.0",
+    "jquery": "^3.6.0"
+  },
+  "devDependencies": {
+    "electron": "^15.1.2"
+  }
+}
