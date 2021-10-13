@@ -9,7 +9,7 @@
   </head>
   <body>
     <div class="container">
-      <ul class="music_list">
+      <ul class="music_list" id="MusicList">
         <li class="list_head">
           <div class="row">#</div>
           <div class="album">Cover</div>
@@ -17,20 +17,23 @@
           <div class="artist">Artist</div>
           <div class="time">Time</div>
         </li>
-        <li class="list_item">
-          <span class="row">1</span>
-          <span class="album"
-            ><img src="../assets/img/gramophone.svg" alt=""
-          /></span>
-          <span class="title">Music Name</span>
-          <span class="artist">Artist Name</span>
-          <span class="time">02:12</span>
-        </li>
       </ul>
-      <div class="current_music"></div>
+      <div class="current_music">
+        <div class="gramophone"></div>
+        <input type="range" id="TimeScroller" />
+        <audio src="" preload="auto" id="Player" controls></audio>
+        <div class="btn-group">
+          <button class="play"></button>
+          <button class="play"></button>
+          <button class="play"></button>
+          <button class="play"></button>
+          <button class="play"></button>
+        </div>
+      </div>
     </div>
 
     <script>
+      require('../node_modules/jquery/dist/jquery.min.js')
       require('../assets/js/index.js')
       //
     </script>
