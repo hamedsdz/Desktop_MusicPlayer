@@ -10,6 +10,9 @@
   <body>
     <div class="container">
       <ul class="music_list" id="MusicList">
+        <!-- <div class="loading hide" id="loading">
+          <img src="../assets/img/loading.gif" alt="Loading" />
+        </div> -->
         <li class="list_head">
           <div class="row">#</div>
           <div class="album">Cover</div>
@@ -18,16 +21,39 @@
           <div class="time">Time</div>
         </li>
       </ul>
-      <div class="current_music">
-        <div class="gramophone"></div>
-        <input type="range" id="TimeScroller" />
-        <audio src="" preload="auto" id="Player" controls></audio>
+      <div class="current_music pause">
+        <div class="gramophone">
+          <img
+            src="../assets/img/gramophone.svg"
+            alt="cover"
+            class="cover"
+            id="cover"
+          />
+          <img src="../assets/img/gramophone_tab.png" alt="tab" class="tab" />
+          <div class="hole"></div>
+        </div>
+        <audio src="" preload="auto" id="Player"></audio>
+        <div class="timeController">
+          <span class="curren-timet">22:22</span>
+          <input type="range" id="TimeLine" class="TimeLine" value="0" />
+          <span class="duration">22:22</span>
+        </div>
         <div class="btn-group">
-          <button class="play"></button>
-          <button class="play"></button>
-          <button class="play"></button>
-          <button class="play"></button>
-          <button class="play"></button>
+          <button class="controller_item prev" id="prev">
+            <img src="../assets/img/icons/previous.png" alt="previous" />
+          </button>
+          <button class="controller_item play" id="play_pause">
+            <img src="../assets/img/icons/play.png" alt="play" />
+          </button>
+          <button class="controller_item next" id="next">
+            <img src="../assets/img/icons/next.png" alt="next" />
+          </button>
+          <button class="controller_item stop" id="stop">
+            <img src="../assets/img/icons/stop.png" alt="stop" />
+          </button>
+          <button class="controller_item mute" id="mute">
+            <img src="../assets/img/icons/unmute.png" alt="unmute" />
+          </button>
         </div>
       </div>
     </div>
