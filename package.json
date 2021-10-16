@@ -23,11 +23,13 @@
   },
   "homepage": "https://github.com/hsadeghzadeh79/Desktop_MusicPlayer#readme",
   "dependencies": {
+    "get-mp3-duration": "^1.0.0",
     "glob": "^7.2.0",
     "jquery": "^3.6.0",
     "jsmediatags": "^3.9.7"
   },
   "devDependencies": {
-    "electron": "^15.1.2"
+    "electron": "^15.1.2",
+    "electron-packager": "^15.4.0"
   }
 }

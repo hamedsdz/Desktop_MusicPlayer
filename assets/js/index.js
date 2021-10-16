@@ -18,9 +18,11 @@ const prev = document.getElementById('prev')
 const next = document.getElementById('next')
 const stop = document.getElementById('stop')
 const TimeLine = document.getElementById('TimeLine')
+const currentTime = document.getElementById('currentTime')
+const Duration = document.getElementById('duration')
 // Variables
 let music_list = []
-let current = -1
+let current = 0
 
 fs.readdirSync(homedir).forEach((folder) => {
   glob(`${homedir}/${folder}/**/*.mp3`, { silent: true }, (er, files) => {
@@ -88,6 +90,7 @@ const push_to_list = ({
     picture,
     album,
     year,
+    time,
   })
   ListItem = document.querySelectorAll('.list_item')
   ListItem.forEach((item) =>
@@ -101,6 +104,8 @@ const push_to_list = ({
 const playSong = (item) => {
   player.setAttribute('src', music_list[item - 1].url)
   cover.src = music_list[item - 1].picture
+  Duration.innerHTML = `${music_list[item - 1].time}`
+  console.log(`${music_list[item - 1].time}`)
   ChangeActive()
   $(`#${item}`).addClass('active')
   document.querySelector('.current_music').classList.remove('pause')
@@ -128,6 +133,7 @@ player.onended = () => {
 player.ontimeupdate = () => {
   TimeLine.max = player.duration
   TimeLine.value = player.currentTime
+  currentTime.innerHTML = msToTime(player.currentTime * 1000)
 }
 
 playPause.addEventListener('click', () => {
@@ -161,15 +167,19 @@ TimeLine.addEventListener('change', () => {
   changeTime()
 })
 
+TimeLine.addEventListener('mousedown', () => {
+  changeTime()
+})
+
 const pausePlayer = () => {
   document.querySelector('.current_music').classList.add('pause')
-  playPause.childNodes[1].src = '../assets/img/icons/pause.png'
+  playPause.childNodes[1].src = '../assets/img/icons/play.png'
   player.pause()
 }
 
 const playPlayer = () => {
   document.querySelector('.current_music').classList.remove('pause')
-  playPause.childNodes[1].src = '../assets/img/icons/play.png'
+  playPause.childNodes[1].src = '../assets/img/icons/pause.png'
   player.play()
 }
 
@@ -197,5 +207,8 @@ function msToTime(timeInMilliseconds) {
   s < 10 ? (s = `0${s}`) : (s = `${s}`)
   m < 10 ? (m = `0${m}`) : (m = `${m}`)
   h < 10 ? (h = `0${h}`) : (h = `${h}`)
-  return `${h}:${m}:${s}`
+  if (h !== '00') {
+    return `${h}:${m}:${s}`
+  }
+  return `${m}:${s}`
 }
